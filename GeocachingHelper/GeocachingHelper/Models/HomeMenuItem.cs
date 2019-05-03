@@ -8,6 +8,7 @@ namespace GeocachingHelper.Models
     {
         Welcome,
         ROT13Decrypt,
+        ROT13Encrypt,
         GeocacheLogger,
         About
     }

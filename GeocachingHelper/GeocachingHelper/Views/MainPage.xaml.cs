@@ -36,6 +36,9 @@ namespace GeocachingHelper.Views
                     case (int)MenuItemType.ROT13Decrypt:
                         MenuPages.Add(id, new NavigationPage(new ROT13DecryptPage()));
                         break;
+                    case (int)MenuItemType.ROT13Encrypt:
+                        MenuPages.Add(id, new NavigationPage(new ROT13EncryptPage()));
+                        break;
                     case (int)MenuItemType.GeocacheLogger:
                         MenuPages.Add(id, new NavigationPage(new GeocacheLoggerPage()));
                         break;

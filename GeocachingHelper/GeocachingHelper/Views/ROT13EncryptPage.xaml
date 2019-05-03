@@ -1,24 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GeocachingHelper.Views.ROT13DecryptPage"
-             Title="ROT13 Decryptor">
+             x:Class="GeocachingHelper.Views.ROT13EncryptPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="ROT13 Decryptor"
+            <Label Text="ROT13 Encryptor"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-            <Label Text="Please enter the message you wish to decrypt"                 
+            <Label Text="Please enter the message you wish to encrypt"                 
                    VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"/>   
-            <Entry Placeholder="Message to decrypt" 
-                   x:Name="decryptmessage"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Entry Placeholder="Message to encrypt" 
+                   x:Name="encryptmessage"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
             <Label Text="" x:Name="outputmessage" FontAttributes="Bold" FontSize="Large" TextColor="Black" VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"/>
-            <Button x:Name="ClickButton" Text="Decrypt" Clicked="ClickButton_Clicked"></Button>
+            <Button x:Name="EncryptClickButton" Text="Encrypt" Clicked="EncryptClickButton_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -10,25 +10,25 @@ using Xamarin.Forms.Xaml;
 namespace GeocachingHelper.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ROT13DecryptPage : ContentPage
+    public partial class ROT13EncryptPage : ContentPage
     {
-        public ROT13DecryptPage()
+        public ROT13EncryptPage()
         {
             InitializeComponent();
-           
         }
 
-        private void ClickButton_Clicked(object sender, EventArgs e)
+        private void EncryptClickButton_Clicked(object sender, EventArgs e)
         {
             int lenofinput = 0;
+            int a = 0;
             string outputstring = string.Empty;
             string workingletter = string.Empty;
-            lenofinput = decryptmessage.Text.Length;
-            int a = 0;
 
-            for (a = 1; (a <= (lenofinput)); a++)
+            lenofinput = encryptmessage.Text.Length;
+
+            for (a = 1; a <= lenofinput; a++)
             {
-                workingletter = decryptmessage.Text.Substring((a - 1), 1).ToUpper();
+                workingletter = encryptmessage.Text.Substring((a - 1), 1).ToUpper();
 
                 switch (workingletter)
                 {
@@ -108,7 +108,7 @@ namespace GeocachingHelper.Views
                         outputstring += "L";
                         break;
                     case "Z":
-                        outputstring = "M";
+                        outputstring += "M";
                         break;
                 }
             }
