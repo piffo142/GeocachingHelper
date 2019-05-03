@@ -6,10 +6,10 @@ namespace GeocachingHelper.Models
 {
     public enum MenuItemType
     {
-        
-        Browse,
-        About,
-        About2
+        Welcome,
+        ROT13Decrypt,
+        GeocacheLogger,
+        About
     }
     public class HomeMenuItem
     {

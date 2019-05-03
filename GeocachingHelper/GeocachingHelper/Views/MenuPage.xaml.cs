@@ -21,8 +21,11 @@ namespace GeocachingHelper.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                //todo add new menu items
+                new HomeMenuItem {Id = MenuItemType.Welcome, Title="Welcome" },
+                new HomeMenuItem {Id = MenuItemType.ROT13Decrypt, Title="ROT 13 Decryptor" },
+                new HomeMenuItem {Id = MenuItemType.GeocacheLogger,Title="Geocache Logger"},
+                new HomeMenuItem {Id = MenuItemType.About,Title="About the APP"}
             };
 
             ListViewMenu.ItemsSource = menuItems;

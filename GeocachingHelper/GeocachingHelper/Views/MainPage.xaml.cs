@@ -20,17 +20,24 @@ namespace GeocachingHelper.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Welcome, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
         {
             if (!MenuPages.ContainsKey(id))
             {
+                //todo add in Page Navigation
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                    case (int)MenuItemType.Welcome:
+                        MenuPages.Add(id, new NavigationPage(new WelcomePage()));
+                        break;
+                    case (int)MenuItemType.ROT13Decrypt:
+                        MenuPages.Add(id, new NavigationPage(new ROT13DecryptPage()));
+                        break;
+                    case (int)MenuItemType.GeocacheLogger:
+                        MenuPages.Add(id, new NavigationPage(new GeocacheLoggerPage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
