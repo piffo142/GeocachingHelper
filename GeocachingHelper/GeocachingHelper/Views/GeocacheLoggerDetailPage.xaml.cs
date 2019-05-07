@@ -50,6 +50,7 @@ namespace GeocachingHelper.Views
                     string shortdesc = document.GetElementbyId("ctl00_ContentBody_ShortDescription").InnerText;
                     string CacheName = document.GetElementbyId("ctl00_ContentBody_CacheName").InnerText;
                     string Hints = document.GetElementbyId("div_hint").InnerText;
+                    //Just added a comment
                 }
                 catch{
                     DisplayAlert("Error", "Enter a valid GC Code", "OK");
