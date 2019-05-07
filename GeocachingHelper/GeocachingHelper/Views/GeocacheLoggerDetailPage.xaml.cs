@@ -32,7 +32,7 @@ namespace GeocachingHelper.Views
         private void GCCodeEntry_Unfocused(object sender, FocusEventArgs e)
         {
             
-            if (GCCodeEntry != null)
+            if (GCCodeEntry.Text != null)
             {
                  DisplayAlert("GC Code is ", GCCodeEntry.Text.ToString(), "ok");
 
