@@ -4,8 +4,10 @@
              x:Class="GeocachingHelper.Views.GeocacheLoggerPage"
              Title="Geocache Logger">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Load List" Clicked="ToolbarItem_Clicked_1"/>
+        <ToolbarItem Text="+" Clicked="ToolbarItem_Clicked" Icon="AddNew.png"/>
     </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
        <StackLayout>
             <ListView x:Name="ItemsListViewFound"

@@ -19,7 +19,12 @@ namespace GeocachingHelper.Views
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new GeocacheLoggerDetailPage());
+            await Navigation.PushModalAsync(new NavigationPage(new GeocacheLoggerDetailPage()));
+        }
+
+        private void ToolbarItem_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

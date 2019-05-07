@@ -1,22 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GeocachingHelper.Views.GeocacheLoggerDetailPage">
-    <ContentPage.Content>
+             x:Class="GeocachingHelper.Views.GeocacheLoggerDetailPage"
+             Title="Add New Log">
+    
+    
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="Save" Clicked="Button_Clicked" Icon="Save.png"/>
+        </ContentPage.ToolbarItems>
+    
+       
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" TextColor="Black">GC Code</Label>
-                <Entry Grid.Row="0" Grid.Column="1" Placeholder="GC"></Entry>
-        </Grid>
-
-    </ContentPage.Content>
+            <Label Grid.Row="0" Grid.Column="0" TextColor="Black" VerticalOptions="CenterAndExpand">GC Code</Label>
+            <Entry Grid.Row="0" Grid.Column="1" Placeholder="GC123456" VerticalOptions="CenterAndExpand" MaxLength="8" x:Name="GCCodeEntry" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Unfocused="GCCodeEntry_Unfocused"/>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="GCTitle">Title</Label>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="GCDesc">Description</Label>
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="GCHint">Hint</Label>
+            <Label Grid.Row="4" Grid.Column="0" TextColor="Black" VerticalOptions="CenterAndExpand" >Log Type</Label>
+            <Picker Title="Select Log Type" Grid.Row="4" Grid.Column="1" VerticalOptions="CenterAndExpand" x:Name="LogType">
+                <Picker.Items>
+                    <x:String>Found It</x:String>
+                    <x:String>Did Not Find It</x:String>
+                    <x:String>Not Attempted</x:String>
+                </Picker.Items>
+            </Picker>
+        <Label Grid.Row="5" Grid.Column="0" TextColor="Black" VerticalOptions="CenterAndExpand">Description of Log</Label>
+            <Editor x:Name="GCLogDesc" Grid.Row="5" Grid.Column="1" TextColor="Black" VerticalOptions="CenterAndExpand" Placeholder="Enter Description of your visit" HeightRequest="200" IsSpellCheckEnabled="True" IsTextPredictionEnabled="True"/>
+    </Grid>
 </ContentPage>
