@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace GeocachingHelper.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GeocacheLoggerPage : ContentPage
+    public partial class GeocacheLoggerDetailPage : ContentPage
     {
-        public GeocacheLoggerPage()
+        public GeocacheLoggerDetailPage()
         {
             InitializeComponent();
-        }
-
-        private async void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new GeocacheLoggerDetailPage());
         }
     }
 }
