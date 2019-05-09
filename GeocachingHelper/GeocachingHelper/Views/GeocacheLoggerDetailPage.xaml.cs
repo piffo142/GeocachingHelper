@@ -34,15 +34,12 @@ namespace GeocachingHelper.Views
             
             if (GCCodeEntry.Text != null)
             {
-                 DisplayAlert("GC Code is ", GCCodeEntry.Text.ToString(), "ok");
-
-
                 string gcInput = GCCodeEntry.Text.ToUpper().ToString();
                 var web = (new HtmlWeb());
-
+                LogCachePage.IsBusy = true;
                 var document = web.Load("http://www.coord.info/" + gcInput);
 
-                //https://coord.info/GC2X2XQ
+                //https://coord.info/GC5WBR3
 
                 var page = document.DocumentNode;
                 try{
@@ -51,10 +48,13 @@ namespace GeocachingHelper.Views
                     string CacheName = document.GetElementbyId("ctl00_ContentBody_CacheName").InnerText;
                     string Hints = document.GetElementbyId("div_hint").InnerText;
                     //Just added a comment
+                    GCTitle.Text = CacheName.ToString();
+                    GCDesc.Text = shortdesc.ToString() + longdesc.ToString();
+                    GCHint.Text = Hints.ToString();
                 }
-                catch{
-                    DisplayAlert("Error", "Enter a valid GC Code", "OK");
-                    GCCodeEntry.Focus();
+                catch { 
+                   // DisplayAlert("Error", "Enter a valid GC Code", "OK");
+                   // GCCodeEntry.Focus();
                 }
             }
             else
@@ -62,6 +62,7 @@ namespace GeocachingHelper.Views
                 DisplayAlert("Error", "Enter a valid GC Code", "OK");
                 GCCodeEntry.Focus();
             }
+            LogCachePage.IsBusy = false;
            
         }
     }
